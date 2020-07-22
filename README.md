@@ -57,6 +57,14 @@ To disable,
 set -e COLCON_ABBR_USE_SYMLINK false
 ```
 
+### Adding options
+
+If you'd like to add options, please define `$COLCON_ABBR_ADDITIONAL_OPTIONS`.
+
+```sh
+set -U COLCON_ABBR_ADDITIONAL_OPTIONS "--catkin-skip-building-tests"
+```
+
 ### Adding other cmake-args
 
 If you'd like to add other cmake-args, please define `$COLCON_ABBR_CMAKE_ARGS`.
