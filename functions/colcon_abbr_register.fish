@@ -1,5 +1,6 @@
 function colcon_abbr_register
     register_colcon_build
+    register_colcon_test
 end
 
 function register_colcon_build
@@ -27,4 +28,14 @@ function register_colcon_build
     abbr -a cbdps "$cb $debug --packages-select"
     abbr -a cbrps "$cb $release --packages-select"
     abbr -a cbrdps "$cb $rel_with_deb_info --packages-select"
+end
+
+function register_colcon_test
+    set -q COLCON_ABBR_TEST_OPTIONS && set test_options " $COLCON_ABBR_TEST_OPTIONS" || set test_options ""
+
+    set -l ct "colcon test$test_options"
+
+    abbr -a ct "$ct"
+    abbr -a ctp "$ct --packages-up-to"
+    abbr -a ctps "$ct --packages-select"
 end
