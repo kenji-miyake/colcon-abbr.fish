@@ -5,7 +5,7 @@ function colcon_abbr_register
 
     set -l debug "-DCMAKE_BUILD_TYPE=Debug"
     set -l release "-DCMAKE_BUILD_TYPE=Release"
-    set -l relwithdebinfo "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    set -l rel_with_deb_info "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
     set -l cb "colcon build$symlink$additional_options --cmake-args"
 
@@ -13,17 +13,17 @@ function colcon_abbr_register
     abbr -a cb "$cb"
     abbr -a cbd "$cb $debug$cmake_args"
     abbr -a cbr "$cb $release$cmake_args"
-    abbr -a cbrd "$cb $relwithdebinfo$cmake_args"
+    abbr -a cbrd "$cb $rel_with_deb_info$cmake_args"
 
     # colcon build --packages-up-to
     abbr -a cbp "$cb --packages-up-to"
     abbr -a cbdp "$cb $debug$cmake_args --packages-up-to"
     abbr -a cbrp "$cb $release$cmake_args --packages-up-to"
-    abbr -a cbrdp "$cb $relwithdebinfo$cmake_args --packages-up-to"
+    abbr -a cbrdp "$cb $rel_with_deb_info$cmake_args --packages-up-to"
 
     # colcon build --packages-select
     abbr -a cbps "$cb --packages-select"
     abbr -a cbdps "$cb $debug$cmake_args --packages-select"
     abbr -a cbrps "$cb $release$cmake_args --packages-select"
-    abbr -a cbrdps "$cb $relwithdebinfo$cmake_args --packages-select"
+    abbr -a cbrdps "$cb $rel_with_deb_info$cmake_args --packages-select"
 end
