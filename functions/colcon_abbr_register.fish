@@ -1,4 +1,8 @@
 function colcon_abbr_register
+    register_colcon_build
+end
+
+function register_colcon_build
     $COLCON_ABBR_USE_SYMLINK && set symlink " --symlink-install" || set symlink ""
     set -q COLCON_ABBR_ADDITIONAL_OPTIONS && set additional_options " $COLCON_ABBR_ADDITIONAL_OPTIONS" || set additional_options ""
     set -q COLCON_ABBR_CMAKE_ARGS && set cmake_args " $COLCON_ABBR_CMAKE_ARGS" || set cmake_args ""
