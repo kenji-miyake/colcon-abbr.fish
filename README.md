@@ -7,7 +7,7 @@ colcon abbreviations for fish-shell
 ### Using fisher (recommended)
 
 ```sh
-fisher add kenji-miyake/colcon-abbr.fish
+fisher install kenji-miyake/colcon-abbr.fish
 ```
 
 ### Using local-install script (for development)
